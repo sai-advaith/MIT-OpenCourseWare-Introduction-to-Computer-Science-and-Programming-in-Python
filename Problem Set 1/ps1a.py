@@ -8,3 +8,4 @@ months = input ("Number of months:")
 portion_down_payment = 0.25
 current_savings = 0
 r = 0.04
+additional_savings = (current_savings * r) / 12
