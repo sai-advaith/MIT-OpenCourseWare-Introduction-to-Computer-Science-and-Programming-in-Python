@@ -8,8 +8,7 @@ portion_down_payment = 0.25*total_cost
 r = 0.04
 monthly_salary = annual_salary/12
 current_savings = 0
-month = 0 
 while current_savings <= portion_down_payment :
-        month = month + 1
+        months = months + 1
         current_savings = current_savings + monthly_salary*portion_saved + (current_savings*0.04)/12
-print ('number of months:',  month)
+print ('number of months: ' + months)
