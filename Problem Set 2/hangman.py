@@ -33,7 +33,6 @@ def load_words():
     return wordlist
 
 
-
 def choose_word(wordlist):
     """
     wordlist (list): list of words (strings)
@@ -60,10 +59,14 @@ def is_word_guessed(secret_word, letters_guessed):
     returns: boolean, True if all the letters of secret_word are in letters_guessed;
       False otherwise
     '''
-    # FILL IN YOUR CODE HERE AND DELETE "pass"
-    pass
-
-
+    g = True
+    for ch in secret_word :
+          if ch in letters_guessed:
+                continue
+          else:
+                g = False
+    return g
+# print (is_word_guessed('apple',['e','a','p','p','l','s']))
 
 def get_guessed_word(secret_word, letters_guessed):
     '''
