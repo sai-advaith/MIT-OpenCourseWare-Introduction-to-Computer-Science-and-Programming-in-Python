@@ -125,16 +125,16 @@ def hangman(secret_word):
     # '''
     k = len (secret_word)
     g = 6
-    print (secret_word)
+    w = 3
+    f = False
+    guesses = []
     print ('welcome to the game Hangman!')
     print ('I am thinking of a word that is ',k,' letters long.')
+    print ('You have ',w,' warnings left.')
     print ('-----------')
-    w = 3
-    guesses = []
     while g > 0:
-          print ('You have ',w,' warnings left.')
           print ('You have ',g,' guesses left.')
-          print ('Available letters: ',string.ascii_lowercase)
+          print ('Available letters: ',get_available_letters(guesses))
           ch = (input ("Please guess a letter: "))
           if ch.isalpha() :
                 if ch in get_available_letters(guesses):
@@ -148,7 +148,6 @@ def hangman(secret_word):
                           else :
                             print ("Oops! That letter is not in my word: ",get_guessed_word(secret_word,guesses))
                             g = g - 1
-                    print ('Available letters: ',get_available_letters(guesses))
                 else:
                     print ('Word has already been guessed')
                     if w > 0 :
@@ -157,7 +156,7 @@ def hangman(secret_word):
 
                     else :
                           g = g - 1
-                          print ("Oops! That is not a valid letter. You are out of warnings and have ", g, " guesses left",get_guessed_word(secret_word,guesses))
+                          print ("Oops! That is not a valid letter. You are out of warnings and have ", g, " guesses left : ",get_guessed_word(secret_word,guesses))
           else :
                 if w > 0 :
                       w = w - 1
@@ -165,9 +164,24 @@ def hangman(secret_word):
 
                 else :
                       g = g - 1
-                      print ("Oops! That is not a valid letter. You are out of warnings and have ", g, " guesses left",get_guessed_word(secret_word,guesses))
+                      print ("Oops! That is not a valid letter. You are out of warnings and have ", g," guesses left : ",get_guessed_word(secret_word,guesses))
           print("---------")
-          
+          if (get_guessed_word(secret_word,guesses)) == secret_word :
+                f = True
+                print ("Congratulations, you Won!")
+                print ("Your score is ",(g*len(set(list(secret_word)))))
+                break
+    if not f :
+      print ("Sorry! You have run out of guesses, the word was", secret_word)
+                
+
+def concat (str):
+  '''
+  Concatenating words
+  '''          
+  x = ""
+  for ch in str :
+        x = x + ch
 def isVowel (ch):
       '''
       Checking if the given string is a vowel or not  
@@ -257,7 +271,7 @@ if __name__ == "__main__":
     # uncomment the following two lines.
     
     secret_word = choose_word(wordlist)
-    hangman(secret_word)
+    hangman("tact")
 
 ###############
     
