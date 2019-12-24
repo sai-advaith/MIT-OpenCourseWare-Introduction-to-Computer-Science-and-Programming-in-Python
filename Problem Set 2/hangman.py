@@ -82,7 +82,7 @@ def get_guessed_word(secret_word, letters_guessed):
     str = ""
     for ch in out:
           str = str + ch
-    print (str)
+    return (str)
 #print(get_guessed_word('apple',['e','i','k','p','r','s']))
 
 def get_available_letters(letters_guessed):
@@ -91,11 +91,13 @@ def get_available_letters(letters_guessed):
     returns: string (of letters), comprised of letters that represents which letters have not
       yet been guessed.
     '''
-    # FILL IN YOUR CODE HERE AND DELETE "pass"
-    pass
-    
-    
-
+    str = string.ascii_lowercase
+    x = ""
+    for ch in str:
+      if (not (ch in letters_guessed)):
+        x = x + ch
+    return x
+# print (get_available_letters(['e','i','k','p','r','s']))
 def hangman(secret_word):
     '''
     secret_word: string, the secret word to guess.
