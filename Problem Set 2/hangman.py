@@ -76,7 +76,14 @@ def get_guessed_word(secret_word, letters_guessed):
       which letters in secret_word have been guessed so far.
     '''
     out = ['_']*len(secret_word)
-    
+    for i in range (len(secret_word)):
+          if secret_word [i] in letters_guessed:
+                out [i] = secret_word[i]
+    str = ""
+    for ch in out:
+          str = str + ch
+    print (str)
+print(get_guessed_word('apple',['e','i','k','p','r','s']))
 
 def get_available_letters(letters_guessed):
     '''
