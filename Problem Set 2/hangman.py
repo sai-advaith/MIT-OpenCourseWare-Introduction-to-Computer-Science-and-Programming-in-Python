@@ -83,7 +83,7 @@ def get_guessed_word(secret_word, letters_guessed):
     for ch in out:
           str = str + ch
     print (str)
-print(get_guessed_word('apple',['e','i','k','p','r','s']))
+#print(get_guessed_word('apple',['e','i','k','p','r','s']))
 
 def get_available_letters(letters_guessed):
     '''
