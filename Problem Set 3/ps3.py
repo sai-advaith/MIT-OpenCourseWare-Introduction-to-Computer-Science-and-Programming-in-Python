@@ -173,9 +173,12 @@ def update_hand(hand, word):
     hand: dictionary (string -> int)    
     returns: dictionary (string -> int)
     """
-
-    pass  # TO DO... Remove this line when you implement this function
-
+    for ch in word :
+        if (hand[ch] - 1) == 0 :
+            del hand [ch]
+        else :
+            hand[ch] = hand [ch] - 1
+    return hand
 #
 # Problem #3: Test word validity
 #
