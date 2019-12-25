@@ -206,10 +206,18 @@ def match_with_gaps(my_word, other_word):
         _ , and my_word and other_word are of the same length;
         False otherwise: 
     '''
-    # FILL IN YOUR CODE HERE AND DELETE "pass"
-    pass
-
-
+    word2 = list (other_word.strip())
+    g = True
+    x = my_word.replace(' ','')
+    word = list (x.strip())
+    if len (word) != len (word2) :
+          return False
+    else :
+          for i in range (len (word)):
+                if word[i].isalpha():
+                      g = g and word [i] == word2 [i]
+    return g
+print (match_with_gaps("a_ ple","apple"))
 
 def show_possible_matches(my_word):
     '''
@@ -271,7 +279,7 @@ if __name__ == "__main__":
     # uncomment the following two lines.
     
     secret_word = choose_word(wordlist)
-    hangman(secret_word)
+    # hangman(secret_word)
 
 ###############
     
