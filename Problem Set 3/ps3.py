@@ -180,7 +180,6 @@ def update_hand(hand, word):
             else :
                 hand[ch] = hand [ch] - 1
     return hand
-print (update_hand({'j':2, 'o':1, 'l':1, 'w':1, 'n':2} ,"jolly"))
 #
 # Problem #3: Test word validity
 #
