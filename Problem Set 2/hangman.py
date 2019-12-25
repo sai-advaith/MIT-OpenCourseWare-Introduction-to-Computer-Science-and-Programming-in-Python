@@ -183,10 +183,10 @@ def concat (str):
   for ch in str :
         x = x + ch
 def isVowel (ch):
-      '''
-      Checking if the given string is a vowel or not  
-      '''
-      return (ch == 'a' or ch == 'e' or ch == 'i' or ch == 'o' or ch == 'u')
+  '''
+  Checking if the given string is a vowel or not  
+  '''
+  return (ch == 'a' or ch == 'e' or ch == 'i' or ch == 'o' or ch == 'u')
 # When you've completed your hangman function, scroll down to the bottom
 # of the file and uncomment the first two lines to test
 #(hint: you might want to pick your own
@@ -271,7 +271,7 @@ if __name__ == "__main__":
     # uncomment the following two lines.
     
     secret_word = choose_word(wordlist)
-    hangman("tact")
+    hangman(secret_word)
 
 ###############
     
