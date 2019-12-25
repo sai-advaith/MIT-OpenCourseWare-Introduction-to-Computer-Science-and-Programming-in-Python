@@ -174,11 +174,13 @@ def update_hand(hand, word):
     returns: dictionary (string -> int)
     """
     for ch in word :
-        if (hand[ch] - 1) == 0 :
-            del hand [ch]
-        else :
-            hand[ch] = hand [ch] - 1
+        if ch in hand.keys() :
+            if (hand[ch] - 1) == 0 :
+                del hand [ch]
+            else :
+                hand[ch] = hand [ch] - 1
     return hand
+print (update_hand({'j':2, 'o':1, 'l':1, 'w':1, 'n':2} ,"jolly"))
 #
 # Problem #3: Test word validity
 #
