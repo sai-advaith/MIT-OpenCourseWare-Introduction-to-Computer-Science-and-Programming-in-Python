@@ -173,14 +173,13 @@ def update_hand(hand, word):
     hand: dictionary (string -> int)    
     returns: dictionary (string -> int)
     """
-    a = {}
+    a = hand.copy()
     word = word.lower()
     for ch in word :
-        if ch in hand.keys() :
-            a[ch] = hand [ch] - 1 - a.get(ch,0)
-    for ch in hand.keys():
-        if ch not in word:
-            a[ch] = hand [ch]
+         if (a[ch] - 1) == 0 :
+             del a [ch]
+         else :
+             a[ch] = a [ch] - 1
     return a
 # Problem #3: Test word validity
 #
